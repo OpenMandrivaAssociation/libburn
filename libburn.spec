@@ -1,9 +1,10 @@
 %define name    libburn
-%define version 0.2.6.3
-%define rel 1
+%define version 0.3.6
+%define rel 	1
 
-%define major 	6
-%define lib_name %mklibname burn %major
+%define major 	4
+%define libname %mklibname burn %major
+%define develname %mklibname burn -d
 
 Summary: 	Library for reading, mastering and writing optical discs
 Name: 		%name
@@ -12,31 +13,32 @@ Release: 	%mkrel %rel
 Url: 		http://libburnia.pykix.org/
 License: 	GPL
 Group: 		System/Libraries
-Source: 	http://libburnia-download.pykix.org/releases/%{name}-%{version}.tar.bz2
+Source: 	http://libburnia-download.pykix.org/releases/%{name}-%{version}.tar.gz
 Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: doxygen
 BuildRequires: graphviz
 
 %description
 Libburn is an open-source library for reading, mastering and writing
-optical discs. For now this means only CD-R and CD-RW.
+optical discs.
 
-%package -n	%{lib_name}
+%package -n	%{libname}
 Group:		System/Libraries
 Summary:	An open-source library for optical discs
 
-%description -n %{lib_name}
+%description -n %{libname}
 An open-source library for reading, mastering and writing optical discs.
 
 ################
 
-%package -n %{lib_name}-devel
+%package -n %{develname}
 Group:          Development/C
 Summary:        Header files for development with %name
 Provides:       %{name}-devel = %{version}
-Requires:       %{lib_name} = %{version}
+Requires:       %{libname} = %{version}
+Obsoletes:	%{_lib}burn6-devel
 
-%description -n %{lib_name}-devel
+%description -n %{develname}
 This package includes the header files for the %{name} package.
 
 #################
@@ -64,18 +66,18 @@ rm -rf $RPM_BUILD_ROOT
 # build documentation
 doxygen doc/doxygen.conf
 
-%post -n %{lib_name} -p /sbin/ldconfig
-%postun -n %{lib_name} -p /sbin/ldconfig
+%post -n %{libname} -p /sbin/ldconfig
+%postun -n %{libname} -p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -n %{lib_name}
+%files -n %{libname}
 %defattr(-,root,root)
 %doc README AUTHORS COPYING COPYRIGHT
 %_libdir/libburn.so.*
 
-%files -n %{lib_name}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %_libdir/libburn.so
 %_libdir/libburn.la
