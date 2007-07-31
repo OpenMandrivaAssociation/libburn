@@ -1,5 +1,5 @@
 %define name    libburn
-%define version 0.3.6
+%define version 0.3.8
 %define rel 	1
 
 %define major 	4
@@ -15,8 +15,8 @@ License: 	GPL
 Group: 		System/Libraries
 Source: 	http://libburnia-download.pykix.org/releases/%{name}-%{version}.tar.gz
 Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: doxygen
-BuildRequires: graphviz
+BuildRequires:	doxygen
+BuildRequires:	graphviz
 
 %description
 Libburn is an open-source library for reading, mastering and writing
@@ -90,5 +90,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc cdrskin/README
 %{_bindir}/cdrskin
 %{_mandir}/man1/cdrskin.1.*
-
 
