@@ -4,7 +4,7 @@
 
 Summary: 	Library for reading, mastering and writing optical discs
 Name: 		libburn
-Version: 	0.4.0
+Version: 	0.4.2
 Release: 	%mkrel 1
 URL: 		http://libburnia.pykix.org/
 License: 	GPLv2+
@@ -66,7 +66,7 @@ rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/libburn.so.*
+%{_libdir}/libburn.so.%{major}*
 
 %files -n %{develname}
 %defattr(-,root,root)
