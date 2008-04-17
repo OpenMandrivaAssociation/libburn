@@ -4,7 +4,7 @@
 
 Summary: 	Library for reading, mastering and writing optical discs
 Name: 		libburn
-Version: 	0.4.2
+Version: 	0.4.4
 Release: 	%mkrel 1
 URL: 		http://libburnia.pykix.org/
 License: 	GPLv2+
@@ -52,11 +52,12 @@ libburn features from the command line.
 
 %install
 rm -rf %{buildroot}
-
 %makeinstall
 
 # build documentation
 doxygen doc/doxygen.conf
+
+ln -s %{_libdir}/pkgconfig/libburn-1.pc %{buildroot}%{_libdir}/pkgconfig/libburn-5.pc
 
 %post -n %{libname} -p /sbin/ldconfig
 %postun -n %{libname} -p /sbin/ldconfig
