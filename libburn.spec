@@ -59,8 +59,12 @@ doxygen doc/doxygen.conf
 
 ln -s %{_libdir}/pkgconfig/libburn-1.pc %{buildroot}%{_libdir}/pkgconfig/libburn-5.pc
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 %clean
 rm -rf %{buildroot}
