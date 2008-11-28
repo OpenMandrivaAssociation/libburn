@@ -1,24 +1,24 @@
-%define major		4
-%define libname		%mklibname burn %major
-%define develname	%mklibname burn -d
+%define major 4
+%define libname %mklibname burn %{major}
+%define develname %mklibname burn -d
 
-Summary: 	Library for reading, mastering and writing optical discs
-Name: 		libburn
-Version: 	0.5.4
-Release: 	%mkrel 1
-URL: 		http://libburnia.pykix.org/
-License: 	GPLv2+
-Group: 		System/Libraries
-Source: 	http://files.libburnia-project.org/releases/%{name}-%{version}.pl00.tar.gz
-Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Summary:	Library for reading, mastering and writing optical discs
+Name:		libburn
+Version:	0.5.6
+Release:	%mkrel 1
+License:	GPLv2+
+Group:		System/Libraries
+URL:		http://libburnia-project.org/
+Source:		http://files.libburnia-project.org/releases/%{name}-%{version}.pl00.tar.gz
 BuildRequires:	doxygen
 BuildRequires:	graphviz
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Libburn is an open-source library for reading, mastering and writing
 optical discs.
 
-%package -n	%{libname}
+%package -n %{libname}
 Group:		System/Libraries
 Summary:	An open-source library for optical discs
 
@@ -26,18 +26,18 @@ Summary:	An open-source library for optical discs
 An open-source library for reading, mastering and writing optical discs.
 
 %package -n %{develname}
-Group:          Development/C
-Summary:        Header files for development with %name
-Provides:       %{name}-devel = %{version}
-Requires:       %{libname} = %{version}
+Summary:	Header files for development with %{name}
+Group:		Development/C
+Provides:	%{name}-devel = %{version}-%{release}
+Requires:	%{libname} = %{version}-%{release}
 Obsoletes:	%{_lib}burn6-devel
 
 %description -n %{develname}
 This package includes the header files for the %{name} package.
 
 %package -n cdrskin
-Summary: Limited cdrecord compatibility wrapper for libburn
-Group: Archiving/Cd burning
+Summary:	Limited cdrecord compatibility wrapper for libburn
+Group:		Archiving/Cd burning
 
 %description -n cdrskin
 A limited cdrecord compatibility wrapper which allows to use some
@@ -85,4 +85,3 @@ rm -rf %{buildroot}
 %doc cdrskin/README
 %{_bindir}/cdrskin
 %{_mandir}/man1/cdrskin.1.*
-
