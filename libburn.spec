@@ -4,12 +4,12 @@
 
 Summary:	Library for reading, mastering and writing optical discs
 Name:		libburn
-Version:	0.5.8
+Version:	0.6.0
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://libburnia-project.org/
-Source:		http://files.libburnia-project.org/releases/%{name}-%{version}.pl00.tar.gz
+Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.pl00.tar.gz
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
