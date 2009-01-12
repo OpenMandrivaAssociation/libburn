@@ -55,7 +55,10 @@ rm -rf %{buildroot}
 %makeinstall_std
 
 # build documentation
-doxygen doc/doxygen.conf
+pushd doc
+doxygen -u doxygen.conf
+doxygen doxygen.conf
+popd
 
 %if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
