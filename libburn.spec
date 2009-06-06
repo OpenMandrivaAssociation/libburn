@@ -4,7 +4,7 @@
 
 Summary:	Library for reading, mastering and writing optical discs
 Name:		libburn
-Version:	0.6.2
+Version:	0.6.6
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		System/Libraries
