@@ -67,8 +67,6 @@ popd
 %defattr(-,root,root)
 %doc README AUTHORS COPYRIGHT
 %{_libdir}/libburn.so
-%{_libdir}/libburn.la
-%{_libdir}/libburn.a
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/%{name}
 
