@@ -5,14 +5,13 @@
 Summary:	Library for reading, mastering and writing optical discs
 Name:		libburn
 Version:	1.1.8
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://libburnia-project.org/
 Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
 BuildRequires:	doxygen
 BuildRequires:	graphviz
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Libburn is an open-source library for reading, mastering and writing
@@ -31,6 +30,7 @@ Group:		Development/C
 Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}-%{release}
 Obsoletes:	%{_lib}burn6-devel
+Provides:	burn-devel = %{version}-%{release}
 
 %description -n %{develname}
 This package includes the header files for the %{name} package.
@@ -51,7 +51,6 @@ libburn features from the command line.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 # build documentation
@@ -59,16 +58,6 @@ pushd doc
 doxygen -u doxygen.conf
 doxygen doxygen.conf
 popd
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
