@@ -68,6 +68,8 @@ This package contains static libraries to develop applications that use
 %install
 %makeinstall_std
 
+rm -rf %{buildroot}/%{_libdir}/*.la
+
 # build documentation
 pushd doc
 doxygen -u doxygen.conf
@@ -85,7 +87,6 @@ popd
 
 %files -n %sdevellibname
 %{_libdir}/*.a
-%{_libdir}/*.la
 
 %files -n cdrskin
 %doc cdrskin/README
