@@ -39,6 +39,10 @@ This package includes the header files for the %{name} package.
 Summary:	Limited cdrecord compatibility wrapper for libburn
 Group:		Archiving/Cd burning
 
+%description -n cdrskin
+A limited cdrecord compatibility wrapper which allows to use some
+libburn features from the command line. 
+
 %prep
 %setup -q
 
