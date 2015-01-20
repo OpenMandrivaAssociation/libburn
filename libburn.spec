@@ -1,11 +1,11 @@
-%define major	4
+%define major 4
 %define libname %mklibname burn %{major}
 %define devname %mklibname burn -d
 
 Summary:	Library for reading, mastering and writing optical discs
 Name:		libburn
-Version:	1.3.0
-Release:	8
+Version:	1.3.8
+Release:	1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://libburnia-project.org/
@@ -47,7 +47,7 @@ libburn features from the command line.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static
 %make
 
