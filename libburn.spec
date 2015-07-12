@@ -45,6 +45,11 @@ libburn features from the command line.
 
 %prep
 %setup -q
+# libburn still bundles libtool 1.5 -- yuck...
+libtoolize --force
+aclocal
+automake -a
+autoconf
 
 %build
 %configure \
