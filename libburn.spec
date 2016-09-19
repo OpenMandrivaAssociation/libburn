@@ -55,10 +55,8 @@ libburn features from the command line.
 %makeinstall_std
 
 # build documentation
-pushd doc
-doxygen -u doxygen.conf
-doxygen doxygen.conf
-popd
+doxygen -u doc/doxygen.conf
+doxygen doc/doxygen.conf
 
 %files -n %{libname}
 %{_libdir}/libburn.so.%{major}*
