@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   libburn-1.4.6.tar.gz: a1fa23be5a49544c27010822c7c6043f562b4b61
+sources:
+  libburn-1.4.8.tar.gz: 3ac1e9db9e5b1dba9572c41f6a93f3170f1a368b
