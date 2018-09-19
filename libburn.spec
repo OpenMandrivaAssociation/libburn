@@ -4,8 +4,8 @@
 
 Summary:	Library for reading, mastering and writing optical discs
 Name:		libburn
-Version:	1.4.8
-Release:	3
+Version:	1.5.0
+Release:	1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://libburnia-project.org/
@@ -44,15 +44,15 @@ A limited cdrecord compatibility wrapper which allows to use some
 libburn features from the command line. 
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure \
 	--disable-static
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # build documentation
 doxygen -u doc/doxygen.conf
