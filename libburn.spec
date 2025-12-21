@@ -10,6 +10,11 @@ License:	GPLv2+
 Group:		System/Libraries
 Url:		https://libburnia-project.org/
 Source0:	https://dev.lovelyhq.com/libburnia/libburn/archive/release-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 
